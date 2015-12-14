@@ -1,0 +1,332 @@
+/*Globals*/
+* {
+	margin: 0;
+	padding: 0;
+	font-family: Oswald;
+}
+
+body {
+	/*height: 100%;*/
+	position: relative;
+	min-width: 800px;
+}
+
+/*Background image*/
+#background {
+	width: calc(100vw - 15px);
+	height: 138vh;
+	position: absolute;
+	z-index: -1;
+	min-width: calc(800px + 12.5%);
+}
+
+#background img {
+	/*1080px x 1500px*/
+	width: 100%;
+	height: auto;
+	margin-bottom: -20px;
+}
+
+ul {
+	text-decoration: none;
+	list-style-type: none;
+}
+
+#wrapper {
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	padding-bottom: 25px;
+}
+
+/*Arcade cabinet's screen*/
+#screen-wrap {
+	width: calc(72.5% + 1px);
+	height: calc(36.5vw + 0.5%);
+	margin-left: 12.5%;
+	margin-top: calc(39% - 21px); /*Subtract size of screen-switch*/
+	overflow: hidden;
+	position: relative;
+	/*min-width: 800px;
+	min-height: 400px;*/
+}
+
+#arcade-screen {
+	width: 300%;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+	left: 0px;
+    -webkit-transition: left .8s cubic-bezier(0.77, 0, 0.175, 1);
+    -moz-transition: left .8s cubic-bezier(0.77, 0, 0.175, 1);
+    -o-transition: left .8s cubic-bezier(0.77, 0, 0.175, 1);
+    transition: left .8s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+#arcade-screen li {
+	width: 33.3%;
+	/*width: 800px;*/
+	height: 100%;
+	/*max-height: 600px;*/
+	position: relative;
+	float: left;
+}
+
+/*Game page*/
+/*#game-start {
+	visibility: hidden;
+	position: absolute;
+}
+
+#game-start:disabled~#game-start-label {
+	visibility: hidden;
+	position: absolute;
+}*/
+
+#game {
+	width: auto;
+	height: auto;
+	margin-right: 1px;
+	z-index: 100;
+	top: 0;
+	left: 0;
+}
+
+#game canvas {
+	position: relative;
+	top: calc(50% - 200px);
+	left: calc(50% - 400px);
+}
+
+/*Beastiary page*/
+#beastiary {
+	/*background-color: rgba(255, 255, 255, 0.5);*/
+	margin-right: 1px;
+	width: 200%;
+	z-index: 50;
+	right: 0;
+    -webkit-transition: right .8s cubic-bezier(0.77, 0, 0.175, 1);
+    -moz-transition: right .8s cubic-bezier(0.77, 0, 0.175, 1);
+    -o-transition: right .8s cubic-bezier(0.77, 0, 0.175, 1);
+    transition: right .8s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+#bPages {
+	height: 100%;
+	width: 400%;
+}
+
+#beastiary #bPages .page {
+	position: relative;
+	width: 25%;
+	height: 100%;
+	float: left;
+	/*width: 33.3%;
+	height: 100%;
+	max-height: 600px;
+	position: relative;
+	float: left;*/
+}
+
+.page-title {
+	width: 100%;
+	margin-bottom: 30px;
+	margin-top: 30px;
+	text-align: center;
+	font-size: 1.5vw;
+}
+
+.page-desc {
+	width: 35%;
+	height: 100%;
+	position: relative;
+	float: left;
+	margin-left: 10%;
+	margin-right: 5%;
+	text-align: justify;
+	font-size: 1vw;
+}
+
+.page-main-img {
+	position: relative;
+	width: 40%;
+	height: 50%;
+	margin-right: 10%;
+	margin-bottom: 30px;
+}
+
+.page-sub-img-wrap {
+	width: 40%;
+	position: relative;
+	float: right;
+	margin-right: 10%;
+}
+
+.page-sub-img {
+	position: relative;
+	width: 27%;
+	margin-right: 3%;
+	margin-left: calc(3% - 1px);
+}
+
+.page-arrow-left {
+	position: absolute;
+	height: 10%;
+	left: 3%;
+	top: 45%;
+}
+
+.page-arrow-right {
+	position: absolute;
+	height: 10%;
+	right: 0;
+	top: 45%;
+	transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+}
+
+.page-button-arrow-left, .page-button-arrow-right {
+	display: none;
+}
+
+/*Links page*/
+#links {
+	background-color: rgba(0, 0, 255, 1);
+	z-index: 100;
+
+}
+
+#links li {
+	width: auto;
+	height: auto;
+	clear: both;
+	margin-top: .5%;
+	margin-left: .5%;
+}
+
+#links ul li a {
+	font-size: 1vw;
+}
+
+#links ul:nth-child(1) {
+	margin-top: 1vw;
+}
+
+a, a:visited, a:active {
+	color: black;
+	text-decoration: none;
+}
+
+a:hover {
+	-webkit-transition: color 1s;
+	transition: color 1s;
+	color: rgba(0, 0, 0, 0.5);
+}
+
+/*Screen change switches*/
+#wrapper input[type=radio]#game-button:checked~#screen-wrap>#arcade-screen {
+	left: 0%;
+}
+
+#wrapper input[type=radio]#beastiary-button:checked~#screen-wrap>#arcade-screen {
+	left: -100%;
+}
+
+#wrapper input[type=radio]#links-button:checked~#screen-wrap>#arcade-screen {
+	left: -200%;
+}
+
+/*Labels for screen change*/
+.screen-switch {
+	font-size: 1.3em; /*21px*/
+	margin: 0;
+	padding: 0;
+	margin-left: 150px;
+}
+
+input[type=radio] {
+	visibility: hidden;
+	position: absolute;
+}
+
+/*Credits*/
+#credits-wrap {
+	width: 35%;
+	color: white;
+	margin-left: 20%;
+	text-align: justify;
+	position: absolute;
+	top: 105vw;
+}
+
+#credits-wrap h2 {
+	font-size: 3vw;
+}
+
+#credits-wrap p {
+	font-size: 0.85vw;
+}
+
+/*Footer styles*/
+
+footer {
+	width: 93.2%;
+	height: 25px;
+	background-color: #383D3F;
+	margin-left: 3.3%;
+	position: absolute;
+}
+
+footer p {
+	width: 97%;
+	text-align: right;
+	color: white;
+}
+
+/*End of footer styles*/
+
+/*Mobile and Tablet*/
+
+@media screen and (max-width: 900px) {
+
+	#screen-wrap {
+		margin-top: 318px;
+		margin-left: 123px;
+		width: 656px;
+		height: 341px;
+	}
+
+	#arcade-screen {
+		margin-top: 10px;
+	}
+
+	footer {
+		margin-left: 30px;
+		width: 840px;
+	}
+
+	#credits-wrap {
+		top: 950px;
+	}
+
+	#credits-wrap h2 {
+		font-size: 0.8em;
+	}
+
+	#game {
+		visibility: hidden;
+	}
+
+	#arcade-screen #links {
+		width: calc(33.3% - 1px);
+	}
+
+	#links ul li a {
+		font-size: 0.7em;
+	}
+
+	#credits-wrap p {
+		font-size: 0.1em;
+	}
+}

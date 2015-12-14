@@ -1,0 +1,3 @@
+var pause = {
+	create: function() {}
+}

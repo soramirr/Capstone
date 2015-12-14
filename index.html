@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="user-scalable=yes" />
+	<title>GOGO Robo Cleans the World</title>
+	<script type="text/javascript" src="assets/js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="assets/js/phaser.js"></script>
+	<script type="text/javascript" src="assets/js/load.js"></script>
+	<script type="text/javascript" src="assets/js/mainMenu.js"></script>
+	<script type="text/javascript" src="assets/js/inGame.js"></script>
+	<script type="text/javascript" src="assets/js/pause.js"></script>
+	<script type="text/javascript" src="assets/js/upgrade.js"></script>
+	<script type="text/javascript" src="assets/js/reset.js"></script>
+	<script type="text/javascript" src="assets/js/gameover.js"></script>
+	<script type="text/javascript" src="assets/js/game.js"></script>
+	<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+
+	<div id="background"><img id="background-img" src="assets/img/background.png" draggable="false" />
+</div>
+
+	<div id="wrapper">
+
+		<!--Buttons to change screen-->
+		<label id="game-label" class="screen-switch" for="game-button">Game</label>
+			<input type="radio" id="game-button" name="slide-control" checked="checked" />
+		<label id="beastiary-label" class="screen-switch" for="beastiary-button">Beastiary</label>
+			<input type="radio" id="beastiary-button" name="slide-control" />
+		<label id="links-label" class="screen-switch" for="links-button">Links</label>
+			<input type="radio" id="links-button" name="slide-control" />
+
+		<!--Screen-->
+		<div id="screen-wrap">
+			<ul id="arcade-screen">
+				<li id="game">
+				</li>	<!--The game goes into here, brought from the javascript-->
+				<li id="beastiary">
+					<!--Beastiary to hold info on the creatures-->
+					<ul id="bPages">
+						<!--Beastiary pages are brought in through javascript-->
+					</ul>
+				</li>
+				<li id="links">
+					<!--Links to outside resources-->
+					<ul>
+						<li><a href="http://www2.epa.gov/">EPA</a></li>
+						<li><a href="http://www.davidsuzuki.org/">David Suzuki Foundation</a></li>
+						<li><a href="http://birding.about.com/od/birdconservation/a/How-Litter-Hurts-Birds.htm">Bird Conservation</a></li>
+						<li><a href="http://www.conserve-energy-future.com/SmogPollution.php">Smog Pollution</a></li>
+						<li><a href="http://www.nrdc.org/health/climate/airpollution.asp">NRDC</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+		<div id="credits-wrap">
+			<h2>ABOUT US</h2>
+			<p>Short description of us, our project, and the reasons behind it. Pellentesque interdum justo nisi, sit amet iaculis sem elementum eu. Nam nec diam hendrerit, efficitur metus sit amet, pulvinar lectus. Morbi egestas justo sapien, non pharetra nisl fermentum ac. Nunc vitae suscipit tortor, eget malesuada magna. Aliquam lacinia ornare neque, quis consectetur ipsum ornare vitae. Duis interdum tellus vitae dictum viverra. Donec a ultricies nulla, quis ultrices ex. Sed vitae odio luctus, tristique nibh sed, feugiat ante. Curabitur et lectus vehicula, dapibus ipsum at, vehicula odio.</p>
+			<h2>ABOUT THE PROJECT</h2>
+			<p>Short description of us, our project, and the reasons behind it. Pellentesque interdum justo nisi, sit amet iaculis sem elementum eu. Nam nec diam hendrerit, efficitur metus sit amet, pulvinar lectus. Morbi egestas justo sapien, non pharetra nisl fermentum ac. Nunc vitae suscipit tortor, eget malesuada magna. Aliquam lacinia ornare neque, quis consectetur ipsum ornare vitae. Duis interdum tellus vitae dictum viverra. Donec a ultricies nulla, quis ultrices ex. Sed vitae odio luctus, tristique nibh sed, feugiat ante. Curabitur et lectus vehicula, dapibus ipsum at, vehicula odio.</p>
+	</div>
+
+	<footer id="footer">
+		<p>&copy 2015</p>
+	</footer>
+
+	<script type="text/javascript" src="assets/js/siteScript.js"></script>
+</body>
+</html>
